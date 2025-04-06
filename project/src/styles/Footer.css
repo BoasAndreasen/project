@@ -1,0 +1,37 @@
+.Footer{
+    display: flex;
+    justify-content: center;
+    height: 10vh;
+    background-color: #FFFFFF;
+    gap: 100px;
+    height: 10vw;
+}
+
+.Footer ul {
+    list-style: none;
+}
+
+.Footer .columns ul p,
+.Footer .columns ul a {
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+}
+
+.Footer .columns ul li {
+    padding: 10px 0;
+}
+
+.Footer .columns ul li:first-child p {
+    color: #495E57;
+}
+
+.Footer .columns ul li:not(:first-child) p {
+    color: black;
+}
+
+.Footer .columns ul a,
+.Footer .columns ul p {
+    margin: 0;
+    padding: 0;
+}
