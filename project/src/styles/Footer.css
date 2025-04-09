@@ -1,14 +1,21 @@
-.Footer{
-    display: flex;
-    justify-content: center;
-    height: 10vh;
+.Footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: start;
+    text-align: center;
     background-color: #FFFFFF;
-    gap: 100px;
-    height: 10vw;
+    gap: 20px;
+    margin: 20px auto;
+    padding: 0 300px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .Footer ul {
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .Footer .columns ul p,
@@ -34,4 +41,22 @@
 .Footer .columns ul p {
     margin: 0;
     padding: 0;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .Footer {
+        grid-template-columns: repeat(1, 1fr);
+        margin: 0 auto;
+        padding: 10px;
+    }
+
+    .Footer ul {
+        padding: 10px 0;
+    }
+
+    .Footer .columns ul p,
+    .Footer .columns ul a {
+        font-size: 16px;
+    }
 }

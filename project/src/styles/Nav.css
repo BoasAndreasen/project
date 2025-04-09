@@ -1,14 +1,22 @@
-.Navigation{
-    display: flex;
-    justify-content: center;
+.Navigation {
+    display: grid;
+    justify-items: center;
     align-items: center;
     background-color: #FFFFFF;
-    height: 10vw;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .Navigation ul {
     list-style: none;
     display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
 }
 
 .Navigation img {
@@ -22,4 +30,24 @@
     display: inline-block;
     line-height: 50px;
     color: black;
+}
+
+@media (max-width: 768px) {
+    .Navigation {
+        padding: 10px;
+    }
+
+    .Navigation ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Navigation img {
+        margin: 0 auto 10px;
+    }
+
+    .Navigation a {
+        margin: 10px 0;
+        font-size: 16px;
+    }
 }
