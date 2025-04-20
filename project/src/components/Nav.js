@@ -6,12 +6,12 @@ function Nav() {
         <div className="Navigation">
             <ul>
                 <li><img src={Logo} alt="logo"></img></li>
-                <li><a href="./">Home</a></li>
-                <li><a href="./">About</a></li>
-                <li><a href="./">Menu</a></li>
-                <li><a href="./">Reservations</a></li>
-                <li><a href="./">Order Online</a></li>
-                <li><a href="./">Login</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/" onClick={(e) => { e.preventDefault(); alert("Not implemented"); }}>About</a></li>
+                <li><a href="/" onClick={(e) => { e.preventDefault(); alert("Not implemented"); }}>Menu</a></li>
+                <li><a href="/reservations">Reservations</a></li>
+                <li><a href="/" onClick={(e) => { e.preventDefault(); alert("Not implemented"); }}>Order Online</a></li>
+                <li><a href="/" onClick={(e) => { e.preventDefault(); alert("Not implemented"); }}>Login</a></li>
             </ul>
         </div>
     )

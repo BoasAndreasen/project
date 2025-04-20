@@ -18,39 +18,37 @@ const Footer = () => {
       <div>
         <div className="columnTitle">Navigation</div>
         <div className="columnContent">
-          <span>Home</span>
+          <a href="/">Home</a>
           <br />
-          <span>About</span>
+          <a href="/" onClick={(e) => { e.preventDefault(); alert("Not implemented"); }}>About</a>
           <br />
-          <span>Menu</span>
+          <a href="/" onClick={(e) => { e.preventDefault(); alert("Not implemented"); }}>Menu</a>
           <br />
-          <span>Reservations</span>
+          <a href="/reservations">Reservations</a>
           <br />
-          <span>Order Online</span>
+          <a href="/" onClick={(e) => { e.preventDefault(); alert("Not implemented"); }}>Order Online</a>
           <br />
-          <span>Login</span>
+          <a href="/" onClick={(e) => { e.preventDefault(); alert("Not implemented"); }}>Login</a>
         </div>
       </div>
 
       <div>
         <div className="columnTitle">Contact</div>
         <div className="columnContent">
-          <span>Address</span>
+          <span>Lane 1</span>
           <br />
-          <span>Phone Number</span>
+          <span>+44 00 0000 0000</span>
           <br />
-          <span>Email</span>
+          <span>Email@email.com</span>
         </div>
       </div>
 
       <div>
         <div className="columnTitle">Social Media Links</div>
         <div className="columnContent">
-          <span>Facebook</span>
+          <a href="https://facebook.com">Facebook</a>
           <br />
-          <span>Twitter</span>
-          <br />
-          <span>Instagram</span>
+          <a href="https://instagram.com">Instagram</a>
         </div>
       </div>
     </footer>

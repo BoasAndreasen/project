@@ -38,6 +38,11 @@
   line-height: 26px;
 }
 
+.footerContainer a {
+  text-decoration: none;
+  color: inherit;
+}
+
 @media (max-width: 900px) {
   .footerContainer {
     max-width: 900px;
