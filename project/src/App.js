@@ -1,9 +1,8 @@
 import './App.css';
-import Footer from './components/Footer'
-import Header from './components/Header'
-import Main from './components/Main'
-import Nav from './components/Nav'
+import Home from './pages/Home'
+import Reservations from './pages/Reservations'
 import Logo from "./resources/Logo.svg"
+import { Routes, Route, BrowserRouter } from "react-router-dom"
 
 function App() {
   return (
@@ -12,14 +11,12 @@ function App() {
       <meta name="og:title" content="Little Lemon"/>
       <meta name="og:description" content="Little Lemon Restaurant"/>
       <meta name="og:image" content={Logo}/>
-      <Header>
-      </Header>
-      <Nav>
-      </Nav>
-      <Main>
-      </Main>
-      <Footer>
-      </Footer>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={ <Home/> } />
+          <Route path="/reservations" element={ <Reservations/> } />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
