@@ -1,0 +1,39 @@
+.testimonials-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  align-items: center;
+  justify-items: center;
+  background-color: #d9d9d9;
+  padding: 50px 150px;
+}
+
+.testimonials-title {
+  font-family: "Markazi Text", serif;
+  font-size: 36px;
+  color: #495e57;
+  margin-bottom: 50px;
+  grid-column: span 4;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .testimonials-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonials-title {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .testimonials-container {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonials-title {
+    font-size: 28px;
+    grid-column: span 1;
+  }
+}

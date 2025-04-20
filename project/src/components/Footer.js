@@ -1,37 +1,60 @@
-import '../styles/Footer.css'
+import React from "react";
+import ownerImage from "../resources/owner.png"
+import '../styles/Footer.css';
 
-function Footer() {
-    return (
-        <div className="Footer">
-            <div className="columns">
-                <ul>
-                    <li><p>Navigation</p></li>
-                    <li><a href="./">Home</a></li>
-                    <li><a href="./">About</a></li>
-                    <li><a href="./">Menu</a></li>
-                    <li><a href="./">Reservations</a></li>
-                    <li><a href="./">Order Online</a></li>
-                    <li><a href="./">Login</a></li>
-                </ul>
-            </div>
-            <div className="columns">
-                <ul>
-                    <li><p>Contact</p></li>
-                    <li><p>Adress</p></li>
-                    <li><p>Phone Number</p></li>
-                    <li><p>Email</p></li>
-                </ul>
-            </div>
-            <div className="columns">
-                <ul>
-                    <li><p>Social Meida Links</p></li>
-                    <li><p>Adress</p></li>
-                    <li><p>Phone Number</p></li>
-                    <li><p>Email</p></li>
-                </ul>
-            </div>
+const Footer = () => {
+  return (
+    <footer className="footerContainer">
+      <div className="logoContainer">
+        <div>
+            <img
+                src={ownerImage}
+                alt="Restaurant owner"
+                className="ownerImage"
+            />
         </div>
-    )
-}
+      </div>
+
+      <div>
+        <div className="columnTitle">Navigation</div>
+        <div className="columnContent">
+          <span>Home</span>
+          <br />
+          <span>About</span>
+          <br />
+          <span>Menu</span>
+          <br />
+          <span>Reservations</span>
+          <br />
+          <span>Order Online</span>
+          <br />
+          <span>Login</span>
+        </div>
+      </div>
+
+      <div>
+        <div className="columnTitle">Contact</div>
+        <div className="columnContent">
+          <span>Address</span>
+          <br />
+          <span>Phone Number</span>
+          <br />
+          <span>Email</span>
+        </div>
+      </div>
+
+      <div>
+        <div className="columnTitle">Social Media Links</div>
+        <div className="columnContent">
+          <span>Facebook</span>
+          <br />
+          <span>Twitter</span>
+          <br />
+          <span>Instagram</span>
+        </div>
+      </div>
+    </footer>
+  );
+};
 
 export default Footer;

@@ -1,62 +1,82 @@
-.Footer {
+.footerContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  gap: 20px;
+  justify-content: center;
+  align-items: start;
+  padding: 60px 0;
+  background-color: #d9d9d9;
+  width: 100%;
+}
+
+.logoContainer {
+  width: 150px;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ownerImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.columnTitle {
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #495e57;
+  margin-bottom: 24px;
+}
+
+.columnContent {
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #333;
+  line-height: 26px;
+}
+
+@media (max-width: 900px) {
+  .footerContainer {
+    max-width: 900px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 200px);
     justify-items: center;
-    align-items: start;
-    text-align: center;
-    background-color: #FFFFFF;
-    gap: 20px;
-    margin: 20px auto;
-    padding: 0 300px;
+    padding: 40px 0;
+    gap: 40px;
+  }
+
+  .column {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .footerContainer {
+    grid-template-columns: 2fr;
+    justify-items: center;
+    gap: 40px;
+  }
+
+  .logoContainer {
+    display: none;
+  }
+
+  .column {
     width: 100%;
-    box-sizing: border-box;
-}
+    text-align: center;
+  }
 
-.Footer ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
+  .columnTitle {
+    font-size: 18px;
+    text-align: center;
 
-.Footer .columns ul p,
-.Footer .columns ul a {
-    text-decoration: none;
-    color: black;
-    font-size: 15px;
-}
+  }
 
-.Footer .columns ul li {
-    padding: 10px 0;
-}
-
-.Footer .columns ul li:first-child p {
-    color: #495E57;
-}
-
-.Footer .columns ul li:not(:first-child) p {
-    color: black;
-}
-
-.Footer .columns ul a,
-.Footer .columns ul p {
-    margin: 0;
-    padding: 0;
-}
-
-/* Mobile styles */
-@media (max-width: 768px) {
-    .Footer {
-        grid-template-columns: repeat(1, 1fr);
-        margin: 0 auto;
-        padding: 10px;
-    }
-
-    .Footer ul {
-        padding: 10px 0;
-    }
-
-    .Footer .columns ul p,
-    .Footer .columns ul a {
-        font-size: 16px;
-    }
+  .columnContent {
+    font-size: 18px;
+    text-align: center;
+  }
 }
