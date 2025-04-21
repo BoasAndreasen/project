@@ -1,19 +1,19 @@
 .testimonial-card {
   background-color: #fff;
-  width: 100%; /* Allow the card to take full width of the grid cell */
-  max-width: 200px; /* Limit the maximum width */
-  height: auto; /* Allow height to adjust dynamically */
+  width: 100%;
+  max-width: 200px;
+  height: auto;
   padding: 20px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center content horizontally */
+  align-items: center;
   justify-content: space-between;
-  text-align: center; /* Center text */
+  text-align: center;
 }
 
 .testimonial-label {
-  font-family: "Karla", sans-serif;
+  font-family: sans-serif;
   font-size: 14px;
   font-weight: 700;
   color: #000;
@@ -28,7 +28,7 @@
 }
 
 .testimonial-text {
-  font-family: "Karla", sans-serif;
+  font-family: sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: #000;
