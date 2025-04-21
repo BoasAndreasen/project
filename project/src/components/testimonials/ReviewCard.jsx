@@ -3,17 +3,17 @@ import "./ReviewCard.css";
 import ownerImage from "../../resources/owner.png"
 
 
-const ReviewCard = () => {
+const ReviewCard = ({rating, name, reviewText}) => {
   return (
     <article className="testimonial-card">
-      <div className="testimonial-label">Rating</div>
+      <div className="testimonial-label">{rating}</div>
       <img
         src={ownerImage}
         alt="Review owner"
         className="testimonial-owner-image"
       />
-      <div className="testimonial-label">Name</div>
-      <div className="testimonial-text">Review rext</div>
+      <div className="testimonial-label">{name}</div>
+      <div className="testimonial-text">{reviewText}</div>
     </article>
   );
 };
