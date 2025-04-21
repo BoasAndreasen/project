@@ -34,7 +34,7 @@
   color: #000;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 900px) {
   .testimonial-card {
     margin-bottom: 20px;
   }
