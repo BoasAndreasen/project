@@ -1,71 +1,111 @@
-import React, { useState } from "react";
-import './BookingForm.css'
+import React from "react";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import './BookingForm.css';
 
 function BookingForm({ availableTimes, dispatch }) {
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
-  const [guests, setGuests] = useState(1);
-  const [occasion, setOccasion] = useState("Birthday");
-
-  const handleDateChange = (e) => {
-    const selectedDate = e.target.value;
-    setDate(selectedDate);
-
-    // Dispatch the action to update available times
-    dispatch({ selectedDate: selectedDate });
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    alert(`Reservation made for ${guests} guests on ${date} at ${time} for a ${occasion}`);
-  };
+  const formik = useFormik({
+    initialValues: {
+      date: "",
+      time: "",
+      guests: 1,
+      occasion: "Birthday",
+    },
+    validationSchema: Yup.object({
+      date: Yup.string().required("Date is required"),
+      time: Yup.string().required("Time is required"),
+      guests: Yup.number()
+        .min(1, "Must be at least 1 guest")
+        .max(10, "Cannot exceed 10 guests")
+        .required("Number of guests is required"),
+      occasion: Yup.string().required("Occasion is required"),
+    }),
+    onSubmit: (values) => {
+      alert(
+        `Reservation made for ${values.guests} guests on ${values.date} at ${values.time} for a ${values.occasion}`
+      );
+    },
+  });
 
   return (
     <form
-      onSubmit={handleSubmit}
-      style={{ display: "grid", maxWidth: "200px", gap: "20px" }}
+      onSubmit={formik.handleSubmit}
+      style={{ display: "grid", maxWidth: "300px", gap: "20px" }}
+      aria-label="Booking Form"
     >
-      <label htmlFor="res-date">Choose date</label>
+      <label htmlFor="date">Choose date</label>
       <input
         type="date"
-        id="res-date"
-        value={date}
-        onChange={handleDateChange}
+        id="date"
+        name="date"
+        value={formik.values.date}
+        onChange={(e) => {
+          formik.handleChange(e);
+          dispatch({ selectedDate: e.target.value });
+        }}
+        onBlur={formik.handleBlur}
       />
+      {formik.touched.date && formik.errors.date ? (
+        <div className="error">{formik.errors.date}</div>
+      ) : null}
 
-      <label htmlFor="res-time">Choose time</label>
+      <label htmlFor="time">Choose time</label>
       <select
-        id="res-time"
-        value={time}
-        onChange={(e) => setTime(e.target.value)}
+        id="time"
+        name="time"
+        value={formik.values.time}
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
       >
-        <option value="" disabled>Select time</option>
+        <option value="" disabled>
+          Select time
+        </option>
         {availableTimes.map((t) => (
-          <option key={t} value={t}>{t}</option>
+          <option key={t} value={t}>
+            {t}
+          </option>
         ))}
       </select>
+      {formik.touched.time && formik.errors.time ? (
+        <div className="error">{formik.errors.time}</div>
+      ) : null}
 
       <label htmlFor="guests">Number of guests</label>
       <input
         type="number"
         id="guests"
+        name="guests"
         min="1"
         max="10"
-        value={guests}
-        onChange={(e) => setGuests(Number(e.target.value))}
+        value={formik.values.guests}
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
       />
+      {formik.touched.guests && formik.errors.guests ? (
+        <div className="error">{formik.errors.guests}</div>
+      ) : null}
 
       <label htmlFor="occasion">Occasion</label>
       <select
         id="occasion"
-        value={occasion}
-        onChange={(e) => setOccasion(e.target.value)}
+        name="occasion"
+        value={formik.values.occasion}
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
       >
-        <option>Birthday</option>
-        <option>Anniversary</option>
+        <option value="Birthday">Birthday</option>
+        <option value="Anniversary">Anniversary</option>
       </select>
+      {formik.touched.occasion && formik.errors.occasion ? (
+        <div className="error">{formik.errors.occasion}</div>
+      ) : null}
 
-      <input type="submit" value="Make Your reservation" />
+      <input
+        type="submit"
+        value="Make Your reservation"
+        disabled={!formik.isValid || formik.isSubmitting}
+        aria-label="On Click"
+      />
     </form>
   );
 }
