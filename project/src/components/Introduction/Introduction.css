@@ -1,0 +1,80 @@
+.introductionContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    background-color: #495E57;
+    padding: 50px 150px;
+}
+
+.introductionColumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.introductionHeading {
+    font-family: sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+    color: #f4ce14;
+    margin: 0;
+}
+
+.introductionSubheading {
+    font-family: sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    background-color: #495e57;
+    margin-top: 10px;
+}
+
+.introductionText {
+    font-family: sans-serif;
+    font-size: 18px;
+    color: white;
+    margin-top: 20px;
+    line-height: 1.5;
+}
+
+.reserveButton {
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    background-color: #f4ce14;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.reserveButton:hover {
+    background-color: #e3ba12;
+}
+
+.introductionImage {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+@media (max-width: 900px) {
+    .introductionContainer {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .introductionColumn {
+        align-items: center;
+        text-align: center;
+    }
+
+    .introductionSubheading {
+        margin-top: 10px;
+    }
+}
