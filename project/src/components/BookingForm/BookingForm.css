@@ -1,0 +1,15 @@
+form {
+    display: grid;
+    padding: 20px;
+    margin: 0 auto;
+  }
+
+input,
+select {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
